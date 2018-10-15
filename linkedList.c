@@ -1,11 +1,8 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#include "linkedList.h"
 
-struct song_node {
-    char name[100];
-    char artist[100];
-    struct song_node *next;
-};
 
 struct song_node * insert_front(struct song_node *list, char *n, char *a) {
     struct song_node *front = malloc(sizeof(front));
@@ -49,7 +46,7 @@ void print_list(struct song_node *list) {
 
 void print_node(struct song_node *p) {
     if (p) {
-        printf("%s: %s\n", p->name, p->artist)
+        printf("%s: %s\n", p->artist, p->name);
     }
 }
 
@@ -63,7 +60,7 @@ struct song_node * find_node(struct song_node *list, struct song_node *n) {
 
 struct song_node * find_artist(struct song_node *list, char *n) {
     while(list) {
-        if (!strcmp(list->artist,n) {
+        if (!strcmp(list->artist,n)) {
             return list;
         }
     }
@@ -73,16 +70,16 @@ struct song_node * find_artist(struct song_node *list, char *n) {
 // return <0 if s1 is before
 // return >0 if s1 is after
 int songcmp(struct song_node *n1, struct song_node *n2) {
-    int returnVal = strcmp(n1->name, n2->name);
+    int returnVal = strcmp(n1->artist, n2->artist);
     if (returnVal) {
-        returnVal = strcmp(n1->artist, n2->artist)
+        returnVal = strcmp(n1->name, n2->name);
     }
     return returnVal;
 }
 
-struct song_node * random(struct song_node *);
+//struct song_node * random(struct song_node *);
 
-struct song_node * remove(struct song_node *list, struct song_node *n) {
+struct song_node * remove_node(struct song_node *list, struct song_node *n) {
     struct song_node *rN = list;
     if (!songcmp(list, n)) {
         rN = list->next;
@@ -90,7 +87,7 @@ struct song_node * remove(struct song_node *list, struct song_node *n) {
         return rN;
     }
     while (list->next) {
-        if (!songcmp(list-next, n)) {
+        if (!songcmp(list->next, n)) {
             struct song_node *f = list->next;
             list->next = f->next;
             free(f);
@@ -101,7 +98,7 @@ struct song_node * remove(struct song_node *list, struct song_node *n) {
     return rN;
 }
 
-void free_list(struct song_node *list) {
+struct song_node * free_list(struct song_node *list) {
     if (list->next) {
         free_list(list->next);
     }
