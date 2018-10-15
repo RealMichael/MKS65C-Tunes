@@ -27,7 +27,7 @@ struct song_node * insert(struct song_node *list, char *n, char *a) {
     struct song_node *prev = list;
 
      if(!list){
-	return insert_front(list,n,a)
+	return insert_front(list,n,a);
     }
     if (songcmp(new, list) < 0) {
             new->next = list;
@@ -62,7 +62,7 @@ void print_node(struct song_node *p) {
 }
 int songcmp(struct song_node *n1, struct song_node *n2) {
     int returnVal = strcmp(n1->artist, n2->artist);
-    if (returnVal) {
+    if (!returnVal) {
         returnVal = strcmp(n1->name, n2->name);
     }
     return returnVal;
@@ -77,11 +77,12 @@ int main(){
 	//print_list(test);
 
 	//printf("testing alphabetical ordering!!);
+	//test = insert(test,"Balloons in Physics", "Wang");
+
 	//test = insert(test,"Don't understand", "Wang");
 	//test = insert(test, "Keeps the doc Away", "Apple");
-	//test = insert(test, "Apples are no good","Wang");
-	//test = insert(test,"Balloons in Physics", "Wang");
-	print_list(test);
+	test = insert(test, "Apples are no good","Wang");
+		print_list(test);
 	return 0;
 }
 
