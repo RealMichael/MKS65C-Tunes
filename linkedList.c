@@ -76,7 +76,7 @@ struct song_node * find_artist(struct song_node *list, char *n) {
 // return >0 if s1 is after
 int songcmp(struct song_node *n1, struct song_node *n2) {
     int returnVal = strcmp(n1->artist, n2->artist);
-    if (returnVal) {
+    if (!returnVal) {
         returnVal = strcmp(n1->name, n2->name);
     }
     return returnVal;
