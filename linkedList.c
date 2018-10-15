@@ -20,7 +20,7 @@ struct song_node * insert(struct song_node *list, char *n, char *a) {
     struct song_node *prev = list;
     
     if(!list){
-	return insert_front(list,n,a)
+	return insert_front(list,n,a);
     }
 
     if (songcmp(new, list) < 0) {
