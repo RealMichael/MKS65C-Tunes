@@ -4,7 +4,7 @@ all: main.o linkedList.o library.o
 debug: main.c linkedList.c library.c
 	gcc -g list main.c linkedList.c library.c
     
-main.o: main.c struct.h
+main.o: main.c linkedList.h library.h
 	gcc -c main.c
 
 linkedList.o: linkedList.c linkedList.h
