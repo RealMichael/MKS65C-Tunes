@@ -17,7 +17,11 @@ int main() {
   l = insert(l,"Lullaby", "GOT7");
   l = insert(l,"Siren", "Sunmi");
   l = insert(l,"The Hardest Part","Roy Kim");
+  print_list(l);
   l = insert(l,"Good Bye", "Punch");
+  printf("HERE\n");
+  print_list(l);
+  printf("END\n");
   l = insert(l,"Way Back Home", "Shuum");
   l = insert(l,"IDOL", "BTS");
   l = insert(l,"Love, ing", "Ben");

@@ -18,13 +18,14 @@ struct song_node * insert(struct song_node *list, char *n, char *a) {
     strcpy(new->name, n);
     strcpy(new->artist, a);
     struct song_node *prev = list;
-    
+
     if(!list){
-	return insert_front(list,n,a);
+	     return insert_front(list,n,a);
     }
 
     if (songcmp(new, list) < 0) {
             new->next = list;
+            //print_node(list);
             return new;
     }
     while (list->next) {
