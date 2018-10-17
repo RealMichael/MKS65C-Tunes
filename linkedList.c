@@ -46,6 +46,8 @@ void print_list(struct song_node *list) {
         }
         print_node(list);
     }
+    // For seperation between test cases
+    printf("\n");
 }
 
 void print_node(struct song_node *p) {
