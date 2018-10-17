@@ -75,7 +75,12 @@ void print_artist(char * artist){
 	}
 
 
-void shuffle(); 
+void shuffle(){
+	int num = rand() % 27;
+	
+	struct song_node * arr = table;
+	print_node(arr + num);
+}
 
 
 
