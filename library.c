@@ -39,7 +39,7 @@ struct song_node * find(char * songName, char * artist){
 	//struct song_node * arr = table;
 	//int res = strcmp(artist,"a");
 	int res = findArr(artist);
-	struct song_node * result = find_node(table[res], songName);
+	struct song_node * result = find_node(table[res],songName,artist);
 	return result;
 }
 	
@@ -80,7 +80,7 @@ void add_song(char* son, char* art){
 void print_artist(char * artist){
 	//struct song_node * arr = find_artistLib(artist);
 	int res = findArr(artist);
-	struct song node * list = table[res];
+	struct song_node * list = table[res];
 	if(list){
 		while(list -> next){
 		if(list-> artist == artist){

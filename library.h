@@ -8,11 +8,11 @@ struct song_node * find(char *, char *);
 
 struct song_node * find_artistLib(char *);
 
-void remove_song(struct song_node *);
+void remove_song(char *, char *);
 
 void clear_library();
 
-void add_song(struct song_node *);
+void add_song(char *,char*);
 
 void print_artist(char *);
 
