@@ -14,20 +14,18 @@ struct song_node * insert_front(struct song_node *list, char *n, char *a) {
 
 struct song_node * insert(struct song_node *list, char *n, char *a) {
     struct song_node *rN = list;
-    struct song_node *new = malloc(sizeof(new));
+    struct song_node *new = malloc(sizeof(struct song_node));
     strcpy(new->name, n);
     strcpy(new->artist, a);
-    struct song_node *prev = list;
-
+    new->next = NULL;
     if(!list){
 	     return insert_front(list,n,a);
     }
 
     if (songcmp(new, list) < 0) {
             new->next = list;
-            //print_node(list);
             return new;
-    }
+        }
     while (list->next) {
         if (songcmp(new, list->next) < 0) {
             new->next = list->next;

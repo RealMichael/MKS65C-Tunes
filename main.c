@@ -13,7 +13,7 @@ int main() {
   fl = insert_front(fl, "THE BIG L", "ZZZ");
 
   struct song_node *l = NULL;
-
+    
   l = insert(l,"Lullaby", "GOT7");
   l = insert(l,"Siren", "Sunmi");
   l = insert(l,"The Hardest Part","Roy Kim");
@@ -23,6 +23,7 @@ int main() {
   print_list(l);
   printf("END\n");
   l = insert(l,"Way Back Home", "Shuum");
+  print_list(l);
   l = insert(l,"IDOL", "BTS");
   l = insert(l,"Love, ing", "Ben");
   l = insert(l,"Every Day, Every Moment", "Paul Kim");
@@ -37,5 +38,16 @@ int main() {
   printf("TESTING PRINT NODE\n");
   print_node(l);
 
+  printf("TESTING SONGCMP\n");
+  struct song_node * a = insert_front(a, "IDOL", "BTS");
+  struct song_node * b = insert_front(b, "Fake Love", "BTS");
+  struct song_node * c = insert_front(c, "Lullaby", "GOT7");
+  
+  printf("Expect 0: %d\n",songcmp(a,a));
+  printf("Expect >0: %d\n",songcmp(a,b));
+  printf("Expect <0: %d\n",songcmp(b,a));
+  printf("Expect <0: %d\n",songcmp(a,c));
+  
+  
   return 0;
 }
