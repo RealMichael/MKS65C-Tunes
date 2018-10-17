@@ -30,7 +30,7 @@ struct song_node * find(char * songName, char * artist){
 }
 	
 
-struct song_node * find_artist(char *){
+struct song_node * find_artistLib(char *){
 	song_node * arr = table;
 	int res = strcmp(let,"a");
 	return (*(arr + res));

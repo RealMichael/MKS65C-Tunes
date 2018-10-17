@@ -6,7 +6,7 @@ void print_letter(char *);
 
 struct song_node * find(char *, char *);
 
-struct song_node * find_artist(char *);
+struct song_node * find_artistLib(char *);
 
 void remove_song(struct song_node *);
 
