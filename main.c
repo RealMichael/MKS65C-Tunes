@@ -38,6 +38,20 @@ int main() {
   printf("TESTING PRINT NODE\n");
   print_node(l);
 
+  printf("TESTING FIND_NODE\n");
+  printf("Expect node to be found\n");
+  print_node(find_node(l,"Siren", "Sunmi"));
+  printf("Expect node to not be found\n");
+  print_node(find_node(l,"Siren", "Lil Touch"));
+  
+  printf("TESTING FIND_ARTIST\n");
+  printf("Expect artist to be found\n");
+  print_list(find_artist(l,"Sunmi"));
+  printf("Expect artist to be found\n");
+  print_list(find_artist(l,"BTS"));
+  printf("Expect artist to not be found\n");
+  print_list(find_artist(l,"Nilo"));
+  
   printf("TESTING SONGCMP\n");
   struct song_node * a = insert_front(a, "IDOL", "BTS");
   struct song_node * b = insert_front(b, "Fake Love", "BTS");
