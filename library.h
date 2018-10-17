@@ -17,3 +17,5 @@ void add_song(char *,char*);
 void print_artist(char *);
 
 void shuffle(); 
+
+int findArr(char *);
