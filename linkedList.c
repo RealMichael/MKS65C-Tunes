@@ -55,12 +55,12 @@ void print_node(struct song_node *p) {
 }
 
 struct song_node * find_node(struct song_node *list, char *n, char *a) {
-    struct song_node *s = NULL;
-    s = insert_front(s, n, a);
+    struct song_node *s = insert_front(s, n, a);
     while(list) {
         if (!songcmp(list,s)) {
             return list;
         }
+        list = list->next;
     }
     free(s);
 }
@@ -70,6 +70,7 @@ struct song_node * find_artist(struct song_node *list, char *n) {
         if (!strcmp(list->artist,n)) {
             return list;
         }
+        list = list->next;
     }
 }
 
