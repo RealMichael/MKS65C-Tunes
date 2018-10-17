@@ -63,7 +63,7 @@ struct song_node * find_node(struct song_node *list, char *n, char *a) {
             return list;
         }
     }
-    s = free(s);
+    free(s);
 }
 
 struct song_node * find_artist(struct song_node *list, char *n) {
