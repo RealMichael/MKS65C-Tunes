@@ -18,7 +18,7 @@ struct song_node * find_artist(struct song_node *, char *);
 
 int songcmp(struct song_node *, struct song_node *);
 
-//struct song_node * random(struct song_node *);
+struct song_node * random_node(struct song_node *);
 
 struct song_node * remove_node(struct song_node *, struct song_node *);
 

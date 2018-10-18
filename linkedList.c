@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include "linkedList.h"
 
-
 struct song_node * insert_front(struct song_node *list, char *n, char *a) {
     struct song_node *front = malloc(sizeof(front));
     strcpy(front->name, n);
@@ -87,7 +86,20 @@ int songcmp(struct song_node *n1, struct song_node *n2) {
     return returnVal;
 }
 
-//struct song_node * random(struct song_node *);
+struct song_node * random_node(struct song_node *list) {
+    int count = 0;
+    struct song_node *fpass = list;
+    while(fpass) {
+        count++;
+        fpass = fpass->next;
+    }
+    int num = rand()%count;
+    while(num){
+        list = list->next;
+        num--;
+    }
+    return list;
+}
 
 struct song_node * remove_node(struct song_node *list, struct song_node *n) {
     struct song_node *rN = list;

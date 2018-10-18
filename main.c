@@ -5,7 +5,10 @@
 #include "library.h"
 
 int main() {
-    /*
+    
+    int seed = time(NULL);
+    srand(seed);
+    
   struct song_node *fl = NULL;
 
   fl = insert_front(fl, "THE BIG L", "HEY");
@@ -76,10 +79,17 @@ int main() {
   l = remove_node(l, e);
   print_list(l);
   
+  printf("TESTING RANDOM\n");
+  print_node(random_node(l));
+  print_node(random_node(l));
+  print_node(random_node(l));
+  
   printf("TESTING FREE_LIST\n");
   l = free_list(l);
   print_list(l);
-  */
+  
+  
+  /*
   printf("===============================================\n\n");
   printf("MUSIC LIBRARY TESTS\n\n");
   printf("===============================================\n\n");
@@ -155,7 +165,7 @@ int main() {
   printf("TESTING CLEAR_LIBRARY\n");
   clear_library();
   print_library();
-  
+  */
   
   return 0;
 }
