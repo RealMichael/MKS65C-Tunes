@@ -5,6 +5,7 @@
 #include "library.h"
 
 int main() {
+    /*
   struct song_node *fl = NULL;
 
   fl = insert_front(fl, "THE BIG L", "HEY");
@@ -78,6 +79,82 @@ int main() {
   printf("TESTING FREE_LIST\n");
   l = free_list(l);
   print_list(l);
+  */
+  printf("===============================================\n\n");
+  printf("MUSIC LIBRARY TESTS\n\n");
+  printf("===============================================\n\n");
+  
+  
+  add_song("Lullaby", "GOT7");
+  add_song("Siren", "Sunmi");
+  add_song("The Hardest Part","Roy Kim");
+  add_song("Good Bye", "Punch");
+  add_song("Way Back Home", "Shuum");
+  add_song("IDOL", "BTS");
+  add_song("Love, ing", "Ben");
+  add_song("Every Day, Every Moment", "Paul Kim");
+  add_song("Power Up", "Red Velvet");
+  add_song("DDU-DU DDU-DU", "Blackpink");
+  add_song("Dance the Night Away", "TWICE");
+  add_song("Lil Touch", "Oh!GG");
+  add_song("Hann", "(G)I-DLE");
+  add_song("Egotistic", "MAMAMOO");
+  add_song("Travel", "B0L4");
+  add_song("Soulmate", "Zico");
+  add_song("I'm so sick", "Apink");
+  add_song("Mattress", "10cm");
+  add_song("Pass By", "Nilo");
+  add_song("I'm Fine", "BTS");
+  add_song("Fake Love", "BTS");
+  
+  printf("TESTING PRINT_LIBRARY\n");
+  print_library();
+
+  printf("TESTING PRINT_LETTER\n");
+  printf("B list \n");
+  print_letter("B");
+  printf("P list \n");
+  print_letter("P");
+  
+  printf("TESTING FIND\n");
+  printf("Expect [Sunmi: Siren] to be found\n");
+  print_node(find("Siren", "Sunmi"));
+  printf("Expect [TWICE: Siren] to not be found\n");
+  print_node(find("Siren", "TWICE"));
+  printf("\n");
+  
+  printf("TESTING FIND_ARTISTLIB\n");
+  printf("Expect [Sunmi] to be found\n");
+  print_list(find_artistLib("Sunmi"));
+  printf("Expect [BTS] to be found\n");
+  print_list(find_artistLib("BTS"));
+  printf("Expect [IU] to not be found\n");
+  print_list(find_artistLib("IU"));
+  
+  printf("TESTING REMOVE_SONG\n");
+  printf("Removing [Red Velvet: Power Up]\n");
+  remove_song("Power Up", "Red Velvet");
+  print_library();
+  printf("Removing [BTS: Fake Love]\n");
+  remove_song("Fake Love", "BTS");
+  print_library();
+  
+  // LOOK AT THIS CASE
+  //printf("Removing [BTS: Siren]\n");
+  //remove_song("Siren", "BTS");
+  //print_library();
+  
+  printf("TESTING PRINT_ARTIST\n");
+  printf("Printing BTS\n");
+  print_artist("BTS");
+  printf("\nPrinting TWICE\n");
+  print_artist("TWICE");
+  printf("\n");
+  
+  printf("TESTING SHUFFLE\n");
+  printf("TESTING CLEAR_LIBRARY\n");
+  clear_library();
+  print_library();
   
   
   return 0;
