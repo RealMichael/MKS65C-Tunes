@@ -150,10 +150,15 @@ int main() {
   remove_song("Fake Love", "BTS");
   print_library();
   
-  // LOOK AT THIS CASE
-  //printf("Removing [BTS: Siren]\n");
-  //remove_song("Siren", "BTS");
-  //print_library();
+  printf("Finding BTS Siren \n");
+  print_artist("BTS");
+  printf("\n");
+
+  
+  printf("Removing [BTS: Siren]\n");
+  remove_song("Siren", "BTS");
+  print_library(); 
+  printf("\n");
   
   printf("TESTING PRINT_ARTIST\n");
   printf("Printing BTS\n");

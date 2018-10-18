@@ -50,12 +50,15 @@ struct song_node * find_artistLib(char * artist){
 	}
 
 void remove_song(char* songName, char * artist){
-    printf("AHHH");
+  // printf("AHHH");
 	struct song_node * res = find(songName,artist);
-	printf("HERE?");
+	//printf("HERE?");
+	if(res != 0){
 	int res2 = findArr(artist);
 	table[res2] = remove_node(table[res2],res);
+	}
 }
+
 
 void clear_library(){
 	
