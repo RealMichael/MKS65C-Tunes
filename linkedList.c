@@ -93,7 +93,7 @@ struct song_node * random_node(struct song_node *list) {
         count++;
         fpass = fpass->next;
     }
-    int num = rand()%count;
+    int num = rand() % count;
     while(num){
         list = list->next;
         num--;

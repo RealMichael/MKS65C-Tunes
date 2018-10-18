@@ -89,11 +89,14 @@ void print_artist(char * artist){
 
 
 void shuffle(){
-	/*int num = rand() % 27;
-	
-	struct song_node * arr = table;
-	print_node(arr + num);
-	*/
+    int songsReturn = 5;
+    while (songsReturn) {
+        int num = rand() % 27;
+        if (table[num]) {
+            print_node(random_node(table[num]));
+            songsReturn--;
+        }
+    }
 }
 
 
