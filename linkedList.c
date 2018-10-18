@@ -17,7 +17,6 @@ struct song_node * insert(struct song_node *list, char *n, char *a) {
     struct song_node *new = malloc(sizeof(struct song_node));
     strcpy(new->name, n);
     strcpy(new->artist, a);
-    new->next = NULL;
     if(!list){
 	     return insert_front(list,n,a);
     }
@@ -35,6 +34,7 @@ struct song_node * insert(struct song_node *list, char *n, char *a) {
         list = list->next;
     }
     list->next = new;
+    new->next = NULL;
     return rN;
 }
 
