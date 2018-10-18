@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <time.h>
 #include "linkedList.h"
 #include "library.h"
 
@@ -85,11 +86,11 @@ int main() {
   print_node(random_node(l));
   
   printf("TESTING FREE_LIST\n");
-  l = free_list(l);
-  print_list(l);
+  //l = free_list(l);
+  //print_list(l);
   
   
-  /*
+  
   printf("===============================================\n\n");
   printf("MUSIC LIBRARY TESTS\n\n");
   printf("===============================================\n\n");
@@ -162,10 +163,13 @@ int main() {
   printf("\n");
   
   printf("TESTING SHUFFLE\n");
+  shuffle();
+  printf("\n");
+  
   printf("TESTING CLEAR_LIBRARY\n");
   clear_library();
   print_library();
-  */
+  
   
   return 0;
 }
