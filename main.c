@@ -21,6 +21,8 @@ int main() {
     
   l = insert(l,"Lullaby", "GOT7");
   l = insert(l,"Siren", "Sunmi");
+
+
   l = insert(l,"The Hardest Part","Roy Kim");
   l = insert(l,"Good Bye", "Punch");
   l = insert(l,"Way Back Home", "Shuum");
@@ -71,23 +73,27 @@ int main() {
   struct song_node * d = insert_front(d, "Power Up", "Red Velvet");
   struct song_node * e = insert_front(e, "Siren", "BTS");
   printf("Removing [Red Velvet: Power Up]\n");
+
   l = remove_node(l, d);
   print_list(l);
   printf("Removing [BTS: Fake Love]\n");
   l = remove_node(l, b);
   print_list(l);
+
   printf("Removing [BTS: Siren]\n");
-  l = remove_node(l, e);
-  print_list(l);
   
+  l = remove_node(l, e);
+
+  print_list(l);
+ 
   printf("TESTING RANDOM\n");
-  print_node(random_node(l));
+ print_node(random_node(l));
   print_node(random_node(l));
   print_node(random_node(l));
   
   printf("TESTING FREE_LIST\n");
-  //l = free_list(l);
-  //print_list(l);
+  l = free_list(l);
+  print_list(l);
   
   
   
@@ -99,15 +105,27 @@ int main() {
   add_song("Lullaby", "GOT7");
   add_song("Siren", "Sunmi");
   add_song("The Hardest Part","Roy Kim");
-  add_song("Good Bye", "Punch");
-  add_song("Way Back Home", "Shuum");
+ add_song("Good Bye", "Punch");
+ add_song("Way Back Home", "Shuum");
   add_song("IDOL", "BTS");
+ //print_node(find("The Hardest Part","Roy Kim"));
+
+	
+  print_artist("Roy Kim");
+  
+ // print_letter("R");
+  //print_letter("S");
   add_song("Love, ing", "Ben");
+
   add_song("Every Day, Every Moment", "Paul Kim");
+
   add_song("Power Up", "Red Velvet");
+
   add_song("DDU-DU DDU-DU", "Blackpink");
+
   add_song("Dance the Night Away", "TWICE");
   add_song("Lil Touch", "Oh!GG");
+
   add_song("Hann", "(G)I-DLE");
   add_song("Egotistic", "MAMAMOO");
   add_song("Travel", "B0L4");
@@ -117,8 +135,21 @@ int main() {
   add_song("Pass By", "Nilo");
   add_song("I'm Fine", "BTS");
   add_song("Fake Love", "BTS");
+  /*
+  add_song("Yabba","Bieber");
+  //add_song("Ha","Rask");
+  add_song("Yola","App");
+  add_song("Son","Beast");
+ add_song("Faded","Walker");
+ add_song("Concepts","Big Wang");
+  add_song("Don't understand","Big Wang");
+  //add_song("House","Florida");
+  add_song("I'm Sick of Debugging","Michael");
+  //add_song("Whatever","Smartie");
+  */
   
   printf("TESTING PRINT_LIBRARY\n");
+
   print_library();
 
   printf("TESTING PRINT_LETTER\n");
@@ -129,6 +160,7 @@ int main() {
   
   printf("TESTING FIND\n");
   printf("Expect [Sunmi: Siren] to be found\n");
+	
   print_node(find("Siren", "Sunmi"));
   printf("Expect [TWICE: Siren] to not be found\n");
   print_node(find("Siren", "TWICE"));
@@ -175,6 +207,8 @@ int main() {
   clear_library();
   print_library();
   
-  
+ // add_song("Lullaby", "GOT7");
+  //print_library();
+
   return 0;
 }

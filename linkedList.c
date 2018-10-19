@@ -4,7 +4,7 @@
 #include "linkedList.h"
 
 struct song_node * insert_front(struct song_node *list, char *n, char *a) {
-    struct song_node *front = malloc(sizeof(front));
+    struct song_node *front = malloc(sizeof(struct song_node));
     strcpy(front->name, n);
     strcpy(front->artist, a);
     front->next = list;
@@ -36,6 +36,7 @@ struct song_node * insert(struct song_node *list, char *n, char *a) {
     new->next = NULL;
     return rN;
 }
+
 
 void print_list(struct song_node *list) {
     if (list) {
@@ -123,8 +124,13 @@ struct song_node * remove_node(struct song_node *list, struct song_node *n) {
 struct song_node * free_list(struct song_node *list) {
     if (list->next) {
         free_list(list->next);
-    }
+	    }
     free(list);
     return list;
 
 }
+
+
+
+
+

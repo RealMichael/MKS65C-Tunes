@@ -15,6 +15,7 @@ int findArr(char * artist){
 	return arrNum;
 }
 
+
 void print_library(){
 	int i = 0;
 	while(i < 27){
@@ -29,6 +30,7 @@ void print_library(){
 		i++;
 	}
 }
+
 
 void print_letter(char * let){
 	int res = findArr(let);
@@ -73,8 +75,10 @@ void clear_library(){
 
 void add_song(char* son, char* art){
         int res = findArr(art);
+	//int res = rand() % 27;
         table[res] = insert(table[res],son,art);
-	}
+	//printf("%d\n",res);
+		}
 
 
 
